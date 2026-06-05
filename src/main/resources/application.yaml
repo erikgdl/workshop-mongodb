@@ -1,3 +1,11 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: workshop-mongodb
+
+  mongodb:
+    host: localhost
+    port: 27017
+    database: workshop-mongodb
