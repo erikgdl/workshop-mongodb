@@ -46,6 +46,12 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioEntity> update(@PathVariable String id ,@RequestBody @Valid UsuarioDto usuarioDto) {
+        UsuarioEntity usuarioEntity = usuarioService.update(id,usuarioDto);
+        return ResponseEntity.status(HttpStatus.OK).body(usuarioEntity);
+    }
+
 
 
 }
