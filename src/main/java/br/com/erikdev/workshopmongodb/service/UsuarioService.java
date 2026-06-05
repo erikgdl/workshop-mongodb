@@ -40,4 +40,13 @@ public class UsuarioService {
                         .orElseThrow(() -> new ObjectNotFoundException("Não encontrado"));
         usuarioRepository.deleteById(id);
     }
+
+    public UsuarioEntity update(String id,UsuarioDto dto) {
+        UsuarioEntity user = usuarioRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Não encontrado"));
+
+        user.setNome(dto.getNome());
+        user.setEmail(dto.getEmail());
+        return usuarioRepository.save(user);
+    }
 }
