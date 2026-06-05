@@ -40,6 +40,12 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id) {
+        usuarioService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 }
