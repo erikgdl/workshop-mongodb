@@ -34,4 +34,10 @@ public class UsuarioService {
                 .email(usuarioDto.getEmail())
                 .build());
     }
+
+    public void delete(String id) {
+        UsuarioEntity user = usuarioRepository.findById(id)
+                        .orElseThrow(() -> new ObjectNotFoundException("Não encontrado"));
+        usuarioRepository.deleteById(id);
+    }
 }
