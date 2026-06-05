@@ -1,6 +1,6 @@
 package br.com.erikdev.workshopmongodb.controller;
 
-
+import br.com.erikdev.workshopmongodb.domain.PostEntity;
 import br.com.erikdev.workshopmongodb.domain.UsuarioEntity;
 import br.com.erikdev.workshopmongodb.dto.UsuarioDto;
 import br.com.erikdev.workshopmongodb.service.UsuarioService;
@@ -52,6 +52,10 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioEntity);
     }
 
-
+    @GetMapping("/{id}/posts")
+    public ResponseEntity<List<PostEntity>> findPosts(@PathVariable String id) {
+        UsuarioEntity user = usuarioService.getById(id);
+        return ResponseEntity.ok().body(user.getPosts());
+    }
 
 }
