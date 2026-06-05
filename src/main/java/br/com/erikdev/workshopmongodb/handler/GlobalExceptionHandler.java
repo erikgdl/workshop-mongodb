@@ -3,7 +3,6 @@ package br.com.erikdev.workshopmongodb.handler;
 
 import br.com.erikdev.workshopmongodb.exception.ErrorResponse;
 import br.com.erikdev.workshopmongodb.exception.ObjectNotFoundException;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
